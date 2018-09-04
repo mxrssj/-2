@@ -1,0 +1,400 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header{
+	background: #ffffff;
+}
+.nav{
+	display: flex;
+	align-items: center;
+	padding: 0 0.2rem;
+	background:-webkit-linear-gradient(left,#ee1d39,#fb5e0e,#fe4525,#f3331b);
+	height: 0.76rem;
+}
+.nav > div {
+	width: 3%;
+}
+.nav > div img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.nav > span {
+	font-size: 0.3rem;
+	color: #ffffff;
+	margin-left: 0.2rem;
+}
+
+.address {
+	display: flex;
+}
+.address > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.address > div:first-child{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.address > div:last-child{
+	flex: 8;
+	display: flex;
+	align-items: center;
+}
+
+.address > div:first-child > div {
+	width: 40%;
+}
+.address > div:first-child > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+	
+}
+
+
+.ssj > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+.shr {
+	width: 100%;
+	justify-content: space-between;
+	padding: 0.2rem 0.6rem 0.2rem 0;
+}
+.shr p,span {
+	font-size: 0.26rem;
+}
+.address_content {
+	align-items: center;
+}
+.address_content p {
+	width: 90%;
+	font-size: 0.2rem;
+}
+.address_content > div {
+	width: 2%;
+	margin-left: 0.2rem;
+}
+.address_content > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+
+.sh{
+	font-size: 0.18rem;
+	color:#f7ba68;
+	padding: 0.2rem 0;
+}
+
+.c_x {
+	display: flex;
+}
+.c_x img {
+	width: 100%;
+	height: auto;
+}
+
+
+.shop{
+	display: flex;
+	align-items: center;
+	border-top: 0.2rem solid #f4f4f4;
+	padding: 0.3rem 0.2rem;
+}
+
+.shop > div {
+	width: 4%;
+}
+.shop > div img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.shop span {
+	font-size: 0.2rem;
+	padding-left: 0.2rem;
+}
+
+.sp{
+	background: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+}
+.sp > div:first-child{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 3;
+}
+.sp > div:first-child > div {
+	width: 100%;
+}
+.sp > div:first-child > div img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.sp_txt {
+	display: flex;
+	flex-wrap: wrap;
+	flex:8;
+	padding-left: 0.2rem;
+}
+.sp_txt p {
+	font-size: 0.2rem;
+}
+.sp_txt b {
+	font-size: 0.18rem;
+	font-weight: normal;
+	color: #999999;
+	padding-top: 0.2rem;
+}
+.sp_txt em {
+	width: 100%;
+	font-size: 0.18rem;
+	color: #f7c470;
+	font-style: normal;
+	padding-top: 0.2rem;
+}
+.sp_txt > div {
+	display: flex;
+	padding-top: 0.2rem;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+.sp_txt > div p {
+	font-size: 0.2rem;
+	color: #ff5e15;
+}
+.sp_txt > div > p > em{
+	font-size: 0.12rem;
+	color: #ff5000;
+}
+.sp_txt > div > span{
+	font-size: 0.2rem;
+}
+.sp_txt > div > span > input{
+	font-size: 0.2rem;
+	width: 0.2rem;
+	text-align: center;
+	border: none;
+	background: #fafafa;
+}
+
+.other {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.gy {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.3rem 0;
+	border-bottom: 0.01rem solid #eeeeee;
+	width: 94%;
+}
+.gy > div {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.gy p {
+	font-size: 0.24rem;
+	width: 20%;
+}
+.gy > div > span {
+	font-size: 0.24rem;
+	padding-right: 0.2rem;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+.gy > div > div {
+	width: 3%;
+}
+.gy > div > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.yx > div > input {
+	width: 0.4rem;
+	height: 0.4rem;
+}
+
+.l_y {
+	display: flex;
+	flex-wrap: wrap;	
+	align-items: center;
+	padding: 0.3rem 0;
+	border-bottom: 0.01rem solid #eeeeee;
+	width: 94%;
+}
+.x_z {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	padding-bottom: 0.2rem;
+}
+.x_z > p {
+	font-size: 0.24rem;
+}
+.x_z > div {
+	width: 6%;
+}
+.x_z > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.m_j {
+	display: flex;
+}
+.m_j b {
+	font-weight: normal;
+	display: flex;
+	font-size: 0.24rem;
+}
+.m_j b > p {
+	color: #999999;
+	padding-left: 0.1rem;
+}
+
+.xiaoji {
+	display: flex;
+	padding: 0.3rem 0.2rem;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	border-bottom: 0.2rem solid #f4f4f4;
+}
+
+.xiaoji p {
+	font-size: 0.24rem;
+	padding-right: 0.2rem;
+}
+.xiaoji span {
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.24rem;
+}
+.xiaoji span > em{
+	display: flex;
+	font-size: 0.18rem;
+	font-style: normal;
+	color: #ff5000;
+	align-items: flex-end;
+}
+.xiaoji span > em > b{
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.26rem;
+	color: #ff5000;
+	font-weight: normal;
+}
+.xiaoji span > em > b > p{
+	font-size: 0.22rem;
+	color: #ff5000;
+	display: flex;
+	align-items: flex-end;
+}
+.jb p {
+	width: 100%;
+}
+.jb > div {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.txt p {
+	font-size: 0.2rem;
+	padding: 0.3rem 0.2rem;
+}
+
+
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: #FFFFFF;
+}
+.address_footer > div{
+	display: flex;
+	flex-wrap: wrap;
+}
+.address_footer > div img{
+	width: 100%;
+	height: auto;
+}
+.address_footer > div p {
+	font-size: 0.2rem;
+	padding: 0.1rem 0.2rem;
+}
+
+.heji {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	border-top: solid 0.01rem #b3b3b3;
+}
+.heji > div {
+	display: flex;
+	align-items: center;
+	padding-right: 0.3rem;
+}
+.heji > div p {
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.2rem;
+}
+.heji > div  span {
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.16rem;
+	color: #ff5000;
+}
+.heji > div span b {
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.2rem;
+	color: #ff5000;
+	font-weight: normal;
+}
+.heji > div span b > em {
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.18rem;
+	color: #ff5000;
+	font-style: normal;
+}
+.heji button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background: -webkit-linear-gradient(left,#ff8f00,#ff5100);
+}
+.heji button p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.22rem;
+	padding: 0.14rem 0.3rem;
+	color: #ffffff;
+}
+main {
+	border-bottom: 1.4rem solid #FFFFFF;
+}

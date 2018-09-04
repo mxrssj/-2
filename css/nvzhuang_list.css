@@ -1,0 +1,117 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem; background: #f2f2f2;}
+
+header {
+	display: flex;
+	align-items: center;
+	background: #ffffff;
+	height: 0.8rem;
+	padding-left: 0.2rem;
+}
+header p {
+	font-size: 0.3rem;
+	flex: 1;
+	text-align: center;
+}
+header > div {
+	width: 2%;
+}
+header > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+
+
+.cnxh_content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+}
+
+.cnxh_content > div {
+	margin-top: 0.15rem;
+}
+
+.shangpin1 {
+	width: 49%;
+}
+
+
+
+.shangpin1 > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sp1 img {
+	width: 100%;
+	height: 100%;
+}
+
+.sp1_content {
+	background: #ffffff;
+	padding-top: 0.15rem;
+}
+
+.jieshao1 p {
+	text-indent: 2em;
+	background: url(../images/index/tao_biao.png) no-repeat 0 0.06rem ;
+	background-size:0.26rem ;
+	color: #757575;
+	font-size: 0.24rem;
+	/*width: 90%;*/
+	margin-left: 0.2rem;
+}
+
+.sp1_old_prich {
+	display: flex;
+	width:100%;
+	justify-content: space-between;
+}
+
+.sp1_old_prich span {
+	margin-left: 0.15rem;
+	color: #999999;
+	font-size: 0.18rem;
+}
+
+.sp1_old_prich em {
+	margin-left: -0.5rem;
+	color: #999999;
+	font-size: 0.18rem;
+	font-style: normal;
+}
+
+.sp1_new_prich {
+	display: flex;
+	width:100%;
+	justify-content: space-between;
+	padding-top: 0.15rem;
+}
+.sp1_new_prich p {
+	margin-left: 0.15rem;
+	color: #f42f19;
+	font-size: 0.28rem;
+}
+
+.old_button {
+	width: 40%;
+}
+
+.old_button img {
+	margin-left: -0.1rem;
+	width: 100%;
+	height: auto;
+}
+
+.jieshao2 p {
+	background: url(../images/index/tianmao.png) no-repeat 0 0.06rem ;
+	background-size:0.32rem ;
+}
+
+main {
+	border-bottom: 3rem solid #f2f2f2;
+}
+
+

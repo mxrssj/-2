@@ -1,0 +1,192 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+
+
+.n_bg {
+	background: -webkit-linear-gradient(left top,#ff4539,#ff5a0c);
+	height: 3.4rem;
+}
+
+.n_bg > div {
+	display: flex;
+}
+
+.n_nav {
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.2rem;
+	padding-top: 0.2rem;
+}
+
+.n_nav h2{
+	font-size: 0.32rem;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.n_nav span{
+	font-size: 0.24rem;
+	color: #ffffff;
+	margin-left: 5rem;
+}
+
+.n_nav p {
+	font-size: 0.48rem;
+	color: #ffffff;
+	margin-top: -0.05rem;
+}
+
+.n_three {
+	background: #ffffff;
+	border-radius: 0.2rem;
+	width: 95%;
+	margin-top: 0.3rem;
+	padding: 0.3rem 0;
+	position: absolute;
+	box-shadow: 0 -0.04rem 0.01rem 0.01rem #efefef inset ;
+}
+
+.n_three_content {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.n_three_content > div{
+	width: 16%;
+}
+
+.n_three_content > div > img {
+	width: 80%;
+	height: auto;
+}
+
+.n_three_content > div > p {
+	width: 100%;
+	font-size: 0.18rem;
+	color: #262626;
+}
+
+
+.p_s {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	justify-content: center;
+}
+
+.nn{
+	background: #ffffff;
+	width: 100%;
+	height: 0.4rem;
+	margin-top: 2rem;
+	background: -webkit-linear-gradient(left,#f3f3f3,#fbfbfb);
+}
+
+
+
+
+.main_content > div {
+	display: flex;
+}
+
+.biao {
+	display: flex;
+	align-items: center;
+	margin-left: 0.2rem;
+	margin-top: 0.4rem;
+}
+.biao >div {
+	width: 4%;
+	height: 0.36rem;
+}
+
+.biao img {
+	width: 100%;
+	height: auto;
+}
+
+.biao h2 {
+	color: #9b9b9b;
+	font-size: 0.28rem;
+	margin-left: 0.2rem;
+}
+
+.main_news{
+	flex-wrap: wrap;
+}
+
+.main_1 {
+	display: flex;
+	width: 100%;
+	margin-left: 0.2rem;
+	margin-top: 0.3rem;
+}
+
+.main_1 > div:nth-child(2) {
+	border-bottom:0.02rem solid #eeeeee ;
+}
+
+.main_m1 {
+	flex: 1;
+}
+
+.main_m1 img {
+	width: 100%;
+	height: auto;
+}
+
+.main_text1 {
+	margin-left: 0.3rem;
+	flex: 9;
+	padding-bottom:0.2rem ;
+}
+
+.main_text1 > div{
+	display: flex;
+	justify-content: space-between;
+}
+
+.main_text1 > div > p {
+	font-size: 0.28rem
+}
+
+.main_text1 > div > span {
+	padding: 0 0.2rem;
+	font-size: 0.24rem;
+	color: #999999;
+}
+
+.main_text1 b {
+	font-size: 0.22rem;
+	color: #999999;
+	font-weight: normal;
+}
+
+footer {
+	background: #ffffff;
+	border-top: 0.02rem solid #dadada;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	padding: 0.1rem 0;
+}
+footer a {
+	width: 13%;
+	text-decoration: none;
+	color: #555;
+	text-align: center;
+	font-size: 0.24rem;
+}
+footer a img{
+	width: 55%;
+	height: auto;
+}
+
+main{
+	border-bottom: 2rem solid #ffffff;
+}

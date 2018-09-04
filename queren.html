@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/queren.css"/>
+	</head>
+	<body>
+		<div id="box">
+			
+	
+		<header>
+			<div v-on:click="pay()">
+				<img src="images/queren/xx.png"/>
+			</div>
+			<h2>确认付款</h2>
+			<div>
+				<img src="images/fukuan/zf_wenhao.png"/>
+			</div>
+		</header>
+		
+		
+		<main>
+			<div class="jiage">
+				<h2><b>￥</b>{{ary}}</h2>
+			</div>
+			
+			<div class="jiage_content">
+				<div class="zhanghao">
+					<div>
+						<p>支付宝账号</p>
+						<h2>155******15</h2>
+					</div>
+				</div>				
+					
+				<div class="fangshi">
+					<div>
+						<p>付款方式</p>
+					</div>
+					<div>
+						<h2 v-on:click="fukuan()">中国工商银行储蓄卡(7762)</h2>
+						<div>
+							<img src="images/queren/zf_RIGHT.png"/>
+						</div>
+					</div>	
+				</div>	
+			</div>
+		</main>
+		
+		<footer>
+			<div v-on:click="jump()">
+				<button>立即付款</button>
+			</div>
+		</footer>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					ary:JSON.parse(localStorage.getItem("q_total"))
+				},
+				methods:{
+					pay(){
+						location = "pay.html"
+					},
+					fukuan(){
+						location = "fukuan.html"
+					},
+					jump(){
+						location = "cg.html"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

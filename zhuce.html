@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message"><img src="images/zhuce/zhuce_03.png"/></div>
+			<div class="search"><h2>会员注册</h2></div>
+			<div class="sys" onclick="history.back()"><span>登录</span></div>
+		</header>
+		<main>
+		<div class="zhanghao">
+			<div class="zh_tupian">
+				<span>手机号</span>
+			</div>
+			<div class="shuru">
+				<input type="tel" v-model="obj.phone" @blur="test()" placeholder="请输入您的手机号" />
+				<span v-if="isShow">
+					<font color="green" v-if="isUse">可用</font>
+					<font color="#FF3030" v-else>不可用</font>
+				</span>
+			</div>
+		</div>
+		<div class="zhanghao mima">
+			<div class="zh_tupian">
+				<span>密码</span>
+			</div>
+			<div class="shuru">
+				<input type="password" v-model="obj.pwd" placeholder="请输入6-24位数字或字母的密码" />
+			</div>
+		</div>
+		<div class="zhanghao mima">
+			<div class="zh_tupian">
+				<span>确认密码</span>
+			</div>
+			<div class="shuru">
+				<input type="password" v-model="pwds" placeholder="请确认输入" />
+			</div>
+		</div>
+		<div class="zhanghao mima">
+			<div class="zh_tupian">
+				<span>验证码</span>
+			</div>
+			<div class="shuru yzm">
+				<input type="text" value="请输入验证码" />
+				<button>获取验证码</button>
+			</div>
+		</div>
+		
+		<div class="liji">
+			<div class="dianji">
+				<input type="checkbox" checked="" />
+				<span>点击注册，代表同意并接受《使用协议》</span>
+			</div>
+			<div class="ljzc">
+				<button @click="zhuce()">立即注册</button>
+			</div>
+		</div>
+		</main>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"main",
+				data:{
+				    obj:{
+				    	 phone:"",
+				    	 pwd:""
+				    },
+				    pwds:"",
+				    isShow:false,
+				    isUse:true
+				},
+				methods:{
+					zhuce(){
+						if(!this.isUse){
+							alert("电话被占用，请重新输入");
+							return;
+						}
+						if(this.obj.pwd != this.pwds){
+							alert("两次密码输入不一致");
+							return; 
+							
+						}
+						
+						axios.post("/zhuce",this.obj).then(function(res){
+							console.log(res)
+							if(res.data == true){
+								location = "denglu.html"
+							}
+						})
+					},
+					test(){
+						axios.post("/test",this.obj.phone).then((res)=>{
+							console.log(res);
+							this.isShow = true;
+							this.isUse = res.data;
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

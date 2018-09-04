@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/pay.css"/>
+	</head>
+	<body>
+		<div id="box">
+			
+		
+		<head>
+			<div class="nav">
+				<div v-on:click="jump()">
+					<img src="images/pay/pay_left.png"/>
+				</div>
+				<span>确认订单</span>
+			</div>
+			
+			<div class="address">
+				
+				<div>
+					<div>
+						<img src="images/pay/map.png"/>
+					</div>
+				</div>
+				
+				
+				<div class="ssj">
+					<div class="shr">
+						<p>收货人：申圣杰</p>
+						<span>15544051915</span>
+					</div>
+					<div class="address_content">
+						<p>收货地址：河南省信阳市平桥区羊上街道河南省信阳市平桥区羊山新区新区信阳职业技术学院</p>
+						<div>
+							<img src="images/pay/pay_r.png"/>
+						</div>
+					</div>
+					<div class="sh">
+						(收货不便时，可选择免费代收货服务)
+					</div>
+				</div>
+			</div>
+			<div class="c_x">
+				<img src="images/pay/chaixian.png"/>
+			</div>
+		</head>
+		
+		<main>
+			<div v-for="(item,index) in ary">
+			<div class="shop">
+				<div>
+					<img src="images/pay/tao2.png"/>
+				</div>
+				<span>十八里{{item.category}}</span>
+			</div>
+			
+			<div class="sp">
+				<div>
+					<div>
+						<img :src="item.img" />
+					</div>
+				</div>
+				
+				<div class="sp_txt">
+					<p>{{item.title}}</p>
+					<b>颜色分类：典雅黑[黑色12cm],尺码：34</b>
+					<em>发货时间：卖家承诺48小时</em>
+					<div>
+						<p><em>￥</em>{{item.price}}</p>
+						<span>x<input type="number" v-model="item.num"  min="1" /></span>
+					</div>
+				</div>
+			</div>
+			</div>	
+			
+			<div class="other">
+				
+				<div class="gy">
+					<p>公益宝贝</p>
+					<div>
+						<span>成交后卖家将捐赠0.02元给公益宝贝计划</span>
+						<div>
+							<img src="images/pay/pay_r.png"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="gy">
+					<p>配上方式</p>
+					<div>
+						<span>快递免邮</span>
+						<div>
+							<img src="images/pay/pay_r.png"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="gy yx">
+					<p>运险费</p>
+					<div>
+						<span>确认收货前退货可赔付11元 ￥5</span>
+						<input type="checkbox" v-model="bb"/>
+					</div>
+				</div>
+				
+				<div class="l_y">
+					<div class="x_z">
+						<p>运险费投保须知</p>
+						<div>
+							<img src="images/pay/wenhao.png"/>
+						</div>
+					</div>
+					<div class="m_j">
+						<b>卖家留言：<p>选填:填写内容已和卖家协商确认</p></b>
+					</div>
+				</div>
+				
+				<div class="xiaoji">
+					<p>共1件商品</p>
+					<span>小计：<em>￥<b>{{abc}}.<p>00</p></b></em></span>
+				</div>
+				
+				<div class="gy yx jb">
+					<p>可用200淘金币抵扣2元</p>
+					<div>
+						<input type="checkbox" v-model="aa" />
+					</div>
+				</div>
+				
+				<div class="gy yx jb">
+					<p>匿名购买</p>
+					<div>
+						<input type="checkbox" checked/>
+					</div>
+				</div>
+				
+				<div class="txt">
+					<p>
+						6月1日-6月20日付款成功的天猫，天猫国际订单，
+						发货时效较日延长，详细规则请查看“2018年天猫
+						618公告”。
+					</p>
+				</div>
+					
+			</div>	
+		</main>
+		
+		<footer>
+			<div class="address_footer">
+				<div>
+					<img src="images/pay/chaixian.png"/>
+					<p>收货地址：河南省信阳市平桥区羊上街道河南省信阳市平桥区羊山新区新区信阳职业技术学院</p>
+				</div>
+			</div>
+			
+			<div class="heji">
+				<div>
+					<p>合计：</span></p>
+					<span>￥<b>{{abc}}.<em>00</em></b>
+				</div>
+				
+				<button v-on:click="zhifu"><p>提交订单</p></button>
+			</div>
+		</footer>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					ary:JSON.parse(localStorage.getItem("shopCar")) || [],
+					aa:false,
+					bb:false
+				},
+				computed:{
+					abc(){
+						var total = 0;
+						for(var i=0;i<this.ary.length;i++){
+							if(this.ary[i].bool){
+								total += this.ary[i].price*this.ary[i].num
+							}
+						}
+						if(this.aa){
+							total -= 2
+						}
+						if(this.bb){
+							total += 5
+						}
+						return total;
+					},
+					sumCount(){
+						var total = 0;
+						for(var i=0;i<this.ary.length;i++){
+							total += this.ary[i].bool;
+						}
+						return total;
+					}
+				},
+				methods:{
+					jump(){
+						location = "shopcar.html"
+					},
+					zhifu(){
+						localStorage.setItem("q_total",this.abc)
+						location = "queren.html"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

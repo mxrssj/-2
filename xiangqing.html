@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/xiangqing.css"/>
+	</head>
+	<body>
+		<div id="box">	
+		<header>
+			<div class="xq_nav">
+				<div v-on:click="tiao()">
+					<img src="images/xiangqing/left.png"/>
+				</div>
+				<div>
+					商品详情
+				</div>
+				<div v-on:click="jump()">
+					<img src="images/xiangqing/shopcar.png"/>
+				</div>
+			</div>
+			
+			
+			<div class="xq_photo">
+				<img :src="obj.img"/>
+			</div>
+			<div class="xq_txt">
+				<div>
+					<p><em>￥</em>{{obj.price}}</p>
+				</div>
+				<div>
+					<p>{{obj.title}}</p>
+					<div>
+						<img src="images/xiangqing/fenxiang.png"/>
+					</div>
+				</div>
+				<div>
+					<span>快递：{{obj.kd}}</span>
+					<em>月销{{obj.pay}}笔</em>
+					<p>{{obj.addres}}</p>
+				</div>
+			</div>
+		</header>
+		
+		
+		<article>
+			<div class="search">
+				<div class="search_content">
+					<span>服务</span>
+					<p>7天无理由<em>·</em>新品<em>·</em>7天内发货</p>
+				</div>
+				<div class="search_photo">
+					<img src="images/xiangqing/you.png"/>
+				</div>
+			</div>
+			
+			<div class="search">
+				<div class="search_content">
+					<span>规格</span>
+					<p>选择 尺码，颜色分类</p>
+				</div>
+				<div class="search_photo">
+					<img src="images/xiangqing/you.png"/>
+				</div>
+			</div>
+			
+			<div class="search">
+				<div class="search_content">
+					<span>参数</span>
+					<p>廓形	风格…</p>
+				</div>
+				<div class="search_photo">
+					<img src="images/xiangqing/you.png"/>
+				</div>
+			</div>
+			
+		</article>
+		
+		
+		<main>
+			<div>
+				<div class="pingjia">
+					<p>宝贝评价({{obj.pj}})</p>
+					<div>
+						<span>查看全部</span>
+						<div>
+							<img src="images/xiangqing/right.png"/>
+						</div>
+					</div>
+				</div>
+			
+				<div class="pingjia_content">
+					<div>
+						<div>
+							<img src="images/xiangqing/user.png"/>
+						</div>
+						<span>{{obj.pj_name}}</span>
+					</div>
+				
+					<p>{{obj.pj_pl}}</p>
+				</div>
+			</div>
+			
+			<div>
+				<div class="pingjia">
+					<p>问大家({{obj.wen}})</p>
+					<div>
+						<span>查看全部</span>
+						<div>
+							<img src="images/xiangqing/right.png"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="wen">
+					<div><em>问</em></div>
+					<p>{{obj.hd}}</p>
+					<span>{{obj.hd_s}}个回答</span>
+				</div>
+				<div class="wen wen2">
+					<div><em>问</em></div>
+					<p>{{obj.hd2}}</p>
+					<span>{{obj.hd_s2}}个回答</span>
+				</div>
+				
+			</div>
+			
+		</main>
+		
+		<div class="dixian">
+			<div>
+				<div></div>
+				<p>你已经看到我的底线啦</p>
+				<div></div>
+			</div>
+			
+		</div>
+		
+		<footer>
+			
+			<div>
+				<div>
+					<div>
+						<img src="images/xiangqing/store.png"/>
+					</div>
+					<span>店铺</span>
+				</div>
+				
+				<div>
+					<div>
+						<img src="images/xiangqing/kf.png"/>
+					</div>
+					<span>客服</span>
+				</div>
+				
+				<div>
+					<div>
+						<img src="images/xiangqing/sc.png"/>
+					</div>
+					<span>收藏</span>
+				</div>
+				
+			</div>
+			
+			<div>
+				<div>
+					<span @click="addShopCar()">加入购物车</span>
+				</div>
+				<div>
+					<span>立即购买</span>
+				</div>
+			</div>
+			
+			
+			
+		</footer>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{},
+					num:1
+				},
+				created(){
+					var id = location.search.split("=")[1];
+					axios.get("/xiangqing/"+id).then((res)=>{
+						console.log(res)
+						this.obj = res.data;
+					})
+				},
+				methods:{
+					addShopCar(){
+						var data={
+							id:this.obj.id,
+							num:this.num,
+							category:this.obj.category,
+							img:this.obj.img,
+							title:this.obj.title,
+							price:this.obj.price,
+							bool:true
+						}
+						
+						if(localStorage.getItem("shopCar")){
+							
+							var res = JSON.parse(localStorage.getItem("shopCar"));
+							
+							var bool = true;
+							for(var i=0;i<res.length;i++){
+								if(res[i].id == data.id){
+									res[i].num+=data.num;
+									bool = false;
+								}
+							}
+							if(bool){
+								res.push(data)
+							}
+							localStorage.setItem("shopCar",JSON.stringify(res))
+						}else{
+							var ary = [data];
+							localStorage.setItem("shopCar",JSON.stringify(ary))
+						}
+					},
+					jump:function(){
+						location = "shopcar.html"
+					},
+					tiao(){
+						location = "nvzhuang.html"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

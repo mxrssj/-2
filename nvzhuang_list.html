@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/nvzhuang_list.css"/>
+	</head>
+	<body>
+		<main id ="box">
+		<header>
+			<div v-on:click="tiao()">
+				<img src="images/nvzhuang/left.png"/>
+			</div>
+			<p>女装</p>
+		</header>
+		
+		
+		
+			
+		
+			<div v-if="isShow">亲，您要找的商品不存在~</div>
+			<div class="cnxh" v-else>
+				
+				<div class="cnxh_content">
+					
+					<div class="shangpin1" v-for="item in ary">
+						<div class="sp1">
+							<img :src="item.img" v-on:click="jump(item.id)"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>{{item.title}}</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：{{item.oldprice}}</span>
+								</div>	
+								<div>
+									<em>月销{{item.pay}}</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥{{item.price}}</p>
+								</div>
+								<div class="old_button">
+									<img :src="item.img2"/>
+								</div>
+							</div>
+						</div>
+					</div>
+<!--					
+					<div class="shangpin1 shangpin2">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_2.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>黑色职业高跟女单鞋防水台粗跟真皮工作鞋…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_3.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>专柜正品春秋款正品纯桑蚕丝真品长丝巾…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_4.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>2018新款女式衬衫女式衬衣白色修身…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="shangpin1">
+						<div class="sp1">
+						<img src="images/nvzhuang/sp_5.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>45*45靠垫芯50*50抱垫芯5*55汽车沙发…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_6.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>女装短袖女2018新款夏装存棉 黑色半袖t桖…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_7.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>短袖t桖女2018年新款韩版宽松大码夏季半袖学…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_8.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>女装短袖女2018新款夏装存棉 黑色半袖t桖…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_9.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>女式短袖超凉快2018新款韩版百搭女式上衣…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_10.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>ins超火的女式半袖T恤女紫色百搭新款…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+										
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_1.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>短袖t桖女2018年新款韩版宽松大码夏季半袖学…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_2.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>女装短袖女2018新款夏装存棉 黑色半袖t桖…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+										
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_3.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>短袖t桖女2018年新款韩版宽松大码夏季半袖学…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_4.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>女装短袖女2018新款夏装存棉 黑色半袖t桖…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+															
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_5.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>短袖t桖女2018年新款韩版宽松大码夏季半袖学…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>淘宝价￥：99</span>
+								</div>	
+								<div>
+									<em>月销2348</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/guss_tu_6.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>女装短袖女2018新款夏装存棉 黑色半袖t桖…</p>
+							</div>
+							<div class="sp1_old_prich">
+								<div>
+									<span>天猫价￥：99</span>
+								</div>	
+								<div>
+									<em>月销3297</em>
+								</div>
+							</div>
+							<div class="sp1_new_prich">
+								<div>
+									<p>￥49</p>
+								</div>
+								<div class="old_button">
+									<img src="images/nvzhuang/button.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					-->
+				
+				</div>	
+			</div>
+		</main>
+		
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var codeStr = decodeURI(location.search.split("=")[1])
+			console.log(typeof codeStr)
+			
+			var app =new Vue({
+				el:"#box",
+				data:{
+					isShow:true,
+					ary:[]
+				},
+				created(){
+					if(codeStr != "undefined"){
+						axios.get("/aaa/"+codeStr).then((res)=>{
+							console.log(res)
+							if(res.data.length !=0){
+								this.isShow = false;
+								this.ary = res.data;
+								
+							}
+						})
+					}
+				},
+				methods:{
+					jump(id){
+						location = "xiangqing.html?id="+id;
+					},
+					tiao(){
+						location = "nvzhuang.html"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

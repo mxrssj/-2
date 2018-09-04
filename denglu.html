@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+	</head>
+	<body>
+		<div id="box">
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/denglu/pic_list_back.jpg"/></div>
+			<div class="search"><h2>会员登录</h2></div>
+			<div class="sys" v-on:click="jump()"><span>注册</span></div>
+		</header>
+		
+		<div class="zhanghao">
+			<div class="zh_tupian">
+				<img src="images/denglu/denglu_03.png"/>
+				<span>账号</span>
+			</div>
+			<div class="shuru">
+				<input type="text" v-model="obj.phone" placeholder="请输入您的手机号/用户名/邮箱" />
+			</div>
+		</div>
+		<div class="zhanghao mima">
+			<div class="zh_tupian">
+				<img src="images/denglu/denglu_07.png"/>
+				<span>密码</span>
+			</div>
+			<div class="shuru">
+				<input type="text" v-model="obj.pwd" placeholder="请输入6-24位数字或字母的密码" />
+			</div>
+		</div>
+		
+		<div class="bg">
+			<div class="denglu">
+				<button @click="login()">登录</button>
+			</div>
+			<div class="m_z">
+				<a href="zhuce.html" class="mf">免费注册</a>
+				<a href="#" class="zh">找回密码</a>
+			</div>
+			<div class="hz">
+				<div class="hz_s">
+					<span>合作伙伴登录</span>
+				</div>
+			</div>
+			<div class="wqw">
+				<div class="weibo">
+					<img src="images/denglu/denglu_11.png"/>
+					<span>微博</span>
+				</div>
+				<div class="qq">
+					<img src="images/denglu/denglu_13.png"/>
+					<span>QQ</span>
+				</div>
+				<div class="wechat">
+					<img src="images/denglu/denglu_15.png"/>
+					<span>微信</span>
+				</div>
+			</div>
+		</div>
+		</div>	
+		
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{
+						phone:"",
+						pwd:""
+					}
+				},
+				methods:{
+					login(){
+						axios.post("/login",this.obj).then((res)=>{
+							console.log(res)
+							if(res.data == "ok"){ 
+								localStorage.setItem("phone",this.obj.phone)
+								location = localStorage.getItem("loginJump");
+							}else{
+								alert(res.data)
+							}
+						})
+					},
+					jump:function(){
+						location = "zhuce.html"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

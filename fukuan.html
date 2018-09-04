@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/fukuan.css"/>
+	</head>
+	<body>
+		<header>
+			<div onclick="history.back()">
+				<img src="images/fukuan/zf_left.png"/>
+			</div>
+			<h2>选择付款方式</h2>
+			<div>
+				<img src="images/fukuan/zf_wenhao.png"/>
+			</div>
+		</header>
+		
+		<main>
+			<div class="main_content">
+				
+				<div class="f1">
+					<div>
+						<img src="images/fukuan/zd.png"/>
+					</div>
+					<div>
+						<p>自动选择</p>
+						<span>按照以下排序，自动选择可用付款方式，收取手续费的付款方式不会被选中</span>	
+					</div>
+				</div>
+				<a href="queren.html">
+				<div class="f2" id="show">
+					<div>
+						<img src="images/fukuan/gs.png"/>
+					</div>
+					<h2>中国工商银行储蓄卡(7762)</h2>
+					<div id="hidden">
+						<img src="images/fukuan/duihao.png"/>
+					</div>
+				</div>				
+				</a>
+				<a href="queren.html">
+				<div class="f2 f22" id="show2">
+					<div>
+						<img src="images/fukuan/kunsan.png"/>
+					</div>
+					<h2>昆山农村商业银行储蓄卡(7060)</h2>
+					<div id="hidden2">
+						<img src="images/fukuan/duihao.png"/>
+					</div>
+				</div>		
+				</a>
+				<a href="queren.html">
+				<div class="f2 f222" id="show3">
+					<div>
+						<img src="images/fukuan/zg.png"/>
+					</div>
+					<h2>中国银行储蓄卡(1603)</h2>
+					<div id="hidden3">
+						<img src="images/fukuan/duihao.png"/>
+					</div>
+				</div>		
+				</a>
+				<div class="f2 huabei">
+					<div>
+						<img src="images/fukuan/hb.png"/>
+					</div>
+					<h2>花呗</h2>
+					<div>
+						<span>推荐</span>
+					</div>
+				</div>		
+				<a href="queren.html">
+				<div class="f2 f2222" id="show4">
+					<div>
+						<img src="images/fukuan/ye.png"/>
+					</div>
+					<h2>余额宝</h2>
+					<div id="hidden4">
+						<img src="images/fukuan/duihao.png"/>
+					</div>
+				</div>		
+				</a>
+				<a href="queren.html">
+				<div class="f2 f22222" id="show5">
+					<div>
+						<img src="images/fukuan/zg.png"/>
+					</div>
+					<h2>中国银行储蓄卡(6761)</h2>
+					<div id="hidden5">
+						<img src="images/fukuan/duihao.png"/>
+					</div>
+				</div>		
+				</a>
+				<div class="f2 zpy">
+					<div>
+						<img src="images/fukuan/py.png"/>
+					</div>
+					<h2>找朋友帮忙</h2>
+					<div>
+						<img src="images/fukuan/zf_RIGHT.png"/>
+					</div>
+				</div>		
+				
+				<div class="f2  zpy">
+					<div>
+						<img src="images/fukuan/tj.png"/>
+					</div>
+					<h2>添加银行卡</h2>
+					<div>
+						<img src="images/fukuan/zf_RIGHT.png"/>
+					</div>
+				</div>		
+				
+				<div class="f2 yu_e">
+					<div>
+						<img src="images/fukuan/yebz.png"/>
+					</div>
+					<div>
+						<h2>账户余额</h2>
+						<p>余额不足</p>
+					</div>
+				</div>		
+			</div>	
+		</main>
+		
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementById("show").onclick = function(){
+					document.getElementById("hidden").style.display = "block";
+					document.getElementById("hidden2").style.display = "none";
+					document.getElementById("hidden3").style.display = "none";
+					document.getElementById("hidden4").style.display = "none";
+					document.getElementById("hidden5").style.display = "none";
+				},
+				document.getElementById("show2").onclick = function(){
+					document.getElementById("hidden2").style.display = "block";
+					document.getElementById("hidden").style.display = "none";
+					document.getElementById("hidden3").style.display = "none";
+					document.getElementById("hidden4").style.display = "none";
+					document.getElementById("hidden5").style.display = "none";
+				},
+				document.getElementById("show3").onclick = function(){
+					document.getElementById("hidden3").style.display = "block";
+					document.getElementById("hidden").style.display = "none";
+					document.getElementById("hidden2").style.display = "none";
+					document.getElementById("hidden4").style.display = "none";
+					document.getElementById("hidden5").style.display = "none";
+				},
+				document.getElementById("show4").onclick = function(){
+					document.getElementById("hidden4").style.display = "block";
+					document.getElementById("hidden").style.display = "none";
+					document.getElementById("hidden2").style.display = "none";
+					document.getElementById("hidden3").style.display = "none";
+					document.getElementById("hidden5").style.display = "none";
+				},
+				document.getElementById("show5").onclick = function(){
+					document.getElementById("hidden5").style.display = "block";
+					document.getElementById("hidden").style.display = "none";
+					document.getElementById("hidden2").style.display = "none";
+					document.getElementById("hidden3").style.display = "none";
+					document.getElementById("hidden4").style.display = "none";
+				}
+ 			}
+
+		</script>
+	
+	</body>
+</html>

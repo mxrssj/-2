@@ -1,0 +1,135 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem; background: #f6f6f6;}
+
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.3rem;
+	height: 1rem;
+	width: 100%;
+	border-bottom: 0.01rem solid #cccccc;
+}
+header > div:first-child{
+	width: 3%;
+}
+header > div:first-child img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+header > div:last-child{
+	width: 6%;
+}
+header > div:last-child img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+header h2 {
+	font-size: 0.36rem;
+	font-weight: normal;
+	flex: 1;
+	text-align: center;
+}
+
+.jiage{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0.4rem 0;
+}
+.jiage h2 {
+	font-size: 1rem;
+	font-weight: normal;
+	color: #3b3b3b;
+}
+.jiage h2 > b {
+	font-size: 1rem;
+	font-weight: normal;
+	color: #0e0e0e;
+}
+
+main{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.jiage_content{
+	width: 96%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.zhanghao{
+	border-bottom: 0.01rem solid #dedede;
+	width: 100%;
+}
+.zhanghao > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.3rem 0.3rem 0.3rem 0;
+}
+.zhanghao > div > p {
+	color: #7b7b7b;
+}
+.zhanghao > div > h2 {
+	color: #646464;
+	font-weight: normal;
+	font-size: 0.32rem;
+}
+
+.fangshi {
+	display: flex;
+	justify-content: space-between;
+}
+.fangshi > div {
+	display: flex;
+	align-items: center;
+	padding: 0.3rem 0.3rem 0.3rem 0;
+}
+.fangshi > div:first-child {
+	color: #7b7b7b;
+}
+.fangshi > div:last-child h2{
+	color: #646464;
+	font-weight: normal;
+	font-size: 0.32rem;
+	padding-right: 0.3rem;
+}
+.fangshi > div:last-child > div {
+	width: 4%;
+}
+.fangshi > div:last-child > div img {
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.fangshi{
+	border-bottom: 0.01rem solid #dedede;
+	width: 100%;
+}
+footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-bottom: 0.3rem;
+}
+footer > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+footer > div button {
+	border: none;
+	background: #1b8ee2;
+	width: 90%;
+	padding: 0.3rem 0;
+	color: #ffffff;
+	font-size: 0.38rem;
+	border-radius: 0.14rem;
+}

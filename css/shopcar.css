@@ -1,0 +1,413 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 1rem;
+	background: #ffffff;
+	border-bottom: 0.2rem #f4f4f4 solid;
+}
+header > div {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.2rem;
+}
+header > div > div{
+	width: 3%;
+}
+header > div > div img{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+header h2 {
+	flex: 1;
+	font-size: 0.32rem;
+	font-weight: normal;
+	text-align: center;
+}
+.l_t {
+	margin-top: -1rem;
+	margin-left: 0.2rem;
+}
+
+
+.dianpu {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dianpu_0 {
+	display: flex;
+	flex: 0.3;
+}
+
+.dianpu_1{
+	display: flex;
+	flex: 9.7;
+	height: 1rem;
+	align-items: center;
+	border-bottom: 0.02rem solid #eeeeee;
+}
+
+.dianpu_1 h2 {
+	font-weight: normal;
+	font-size: 0.28rem;
+	margin-left: 0.2rem;
+}
+
+.dianpu_photo1{
+	width: 8%;
+	height: 0.54rem;
+}
+
+.dianpu_photo1 img {
+	width: 100%;
+	height: auto;
+}
+
+.dianpu_photo2{
+	width: 2%;
+	height: auto;
+	margin-left: 0.2rem;
+}
+
+.dianpu_photo2 img {
+	width: 100%;
+	height: auto;
+}
+
+.sp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 0.4rem solid #f4f4f4;
+}
+
+.cb input {
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-left: 0.2rem;
+}
+
+.sp_1 {
+	width: 50%;
+	margin: 0.2rem 0;
+	margin-left: 0.6rem;
+}
+
+.sp_1 img {
+	width: 100%;
+	height:auto ;
+}
+
+.messae{
+	width: 90%;
+}
+
+.mg_p1 {
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0.2rem;
+}
+
+.mg_p1 p {
+	font-size: 0.24rem;
+	line-height: 0.4rem;
+}
+
+.yanse {
+	background: #f9f9f9;
+	width: 2.8rem;
+	border-radius: 0.14rem ;
+	margin-left: 0.2rem;
+	margin-top: 0.12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.yanse p {
+	color: #999999;
+	font-size: 0.18rem;
+	padding: 0.1rem 0;
+}
+
+.y_s {
+	width: 6%;
+	height: 0.1rem;
+	display: flex;
+	margin-left: 0.15rem;
+}
+
+.y_s img {
+	width: 100%;
+	height: auto;
+
+}
+
+.price{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.2rem;
+}
+
+.price p {
+	color: #ff5500;
+	margin-left: 0.2rem;
+	padding-top: 0.2rem;
+}
+
+.price > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 0.2rem;
+}
+
+.price > div > input {
+	width: 0.6rem;
+	height: 0.32rem;
+	border: 0.01rem solid #eaeaea;
+	text-align: center;
+}
+
+.price > div > button {
+	width: 0.32rem;
+	height: 0.32rem;
+	border: none;
+	border: 0.01rem solid #eaeaea;
+	background: #FFFFFF;
+}
+
+
+.cnxh {
+	background: #f4f4f4;
+}
+
+.ax {
+	display: flex;
+	background:url(../images/index/aixin.png) no-repeat 3rem center #ffffff;
+	background-size:0.28rem ;
+	height: 0.56rem;
+	margin-left: -0.3rem;
+}
+
+.ax h2 {
+	font-size: 0.24rem;
+	color: #ef3b27;
+	margin-left: 1.2rem;
+	text-align: center;
+	line-height: 0.56rem;
+	font-weight: normal;
+}
+
+.ax,.xian1{
+	display: flex;
+}
+.xian1 img{
+	width: 1rem;
+	height: 0.02rem;
+	margin-top: 0.28rem;
+	margin-left: 1.4rem;
+}
+
+.ax,.xian2{
+	display: flex;
+}
+
+.xian2 img{
+	width: 1rem;
+	height: 0.02rem;
+	margin-top: 0.28rem;
+	margin-left: 0.6rem;
+}
+
+.cnxh_content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+}
+
+.cnxh_content > div {
+	margin-top: 0.15rem;
+}
+
+.shangpin1 {
+	width: 49%;
+}
+
+
+
+.shangpin1 > div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sp1 img {
+	width: 100%;
+	height: 100%;
+}
+
+.sp1_content {
+	background: #ffffff;
+	padding-top: 0.15rem;
+}
+
+.jieshao1 p {
+	text-indent: 2em;
+	background: url(../images/index/tao_biao.png) no-repeat 0 0.06rem ;
+	background-size:0.26rem ;
+	color: #757575;
+	font-size: 0.24rem;
+	/*width: 90%;*/
+	margin-left: 0.2rem;
+}
+
+.sp1_old_prich {
+	display: flex;
+	width:100%;
+	justify-content: space-between;
+}
+
+.sp1_old_prich span {
+	margin-left: 0.15rem;
+	color: #999999;
+	font-size: 0.18rem;
+}
+
+.sp1_old_prich em {
+	margin-left: -0.5rem;
+	color: #999999;
+	font-size: 0.18rem;
+	font-style: normal;
+}
+
+.sp1_new_prich {
+	display: flex;
+	width:100%;
+	justify-content: space-between;
+	padding-top: 0.15rem;
+}
+.sp1_new_prich p {
+	margin-left: 0.15rem;
+	color: #f42f19;
+	font-size: 0.28rem;
+}
+
+.old_button {
+	width: 40%;
+}
+
+.old_button img {
+	margin-left: -0.1rem;
+	width: 100%;
+	height: auto;
+}
+
+.jieshao2 p {
+	background: url(../images/index/tianmao.png) no-repeat 0 0.06rem ;
+	background-size:0.32rem ;
+}
+
+main {
+	border-bottom: 3rem solid #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+.f_r {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: #ffffff;
+}
+
+.jieshuan{
+	border-top: 0.02rem solid #dddddd;
+	display: flex;
+	justify-content: space-between;
+}
+
+.jieshuan > div {
+	display: flex;
+	align-items: center;
+}
+
+.q_x{
+	display: flex;
+	margin-left: 0.2rem;
+	
+}
+
+.q_x > input{
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+.q_x > span {
+	margin-left: 0.2rem;
+	color: #757575;
+	font-size: 0.28rem;
+}
+
+.h_j {
+	margin-left: 1.5rem;
+}
+
+.h_j span{
+	color: #3d4245;
+	font-size: 0.28rem;
+}
+
+.h_j span > em {
+	color: #ff5500;
+	font-style: normal;
+	font-size: 0.26rem;
+}
+
+.j_s button{
+	width: 2.4rem;
+	height: 1rem;
+	border: none;
+	background: #ff5500;
+	color: #FFFFFF;
+	font-size: 0.34rem;
+}
+
+
+
+
+
+footer {
+	background: #ffffff;
+	border-top: 0.02rem solid #dadada;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	padding: 0.1rem 0;
+}
+footer a {
+	width: 13%;
+	text-decoration: none;
+	color: #555;
+	text-align: center;
+	font-size: 0.24rem;
+}
+footer a img{
+	width: 55%;
+	height: auto;
+}

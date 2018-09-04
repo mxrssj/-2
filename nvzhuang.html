@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/nvzhuang.css"/>
+	</head>
+	<body>
+		<main id="main">
+		<header>
+			<div v-on:click="jump()">
+				<img src="images/nvzhuang/left.png"/>
+			</div>
+			<p>女装</p>
+		</header>
+		
+			
+		
+			<div class="cnxh">
+				<div class="cnxh_content" >
+					
+					<div class="shangpin1" v-for="item in result">
+						<div class="sp1">
+							<a v-bind="{href:'nvzhuang_list.html?keyword='+item.title}">
+								<img :src="item.img" />
+							</a>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>{{item.title}}</p>
+							</div>
+						</div>
+					</div>
+<!--						
+					<div class="shangpin1 shangpin2">
+						<div class="sp1">
+							<a v-bind="{href:'nvzhuang_list.html?keyword='+item.title}">
+								<img :src="item.img2" />
+							</a>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>{{item.title2}}</p>
+							</div>
+						</div>
+					</div>
+	
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/adas.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>阿迪达斯</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/c_k.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>长裤</p>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="shangpin1">
+						<div class="sp1">
+						<img src="images/nvzhuang/c_x.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>长筒靴</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/q_z.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>套装</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/c_w.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>长袜</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/w_z.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>短袜</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_3.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1">
+								<p>围巾</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="shangpin1 shangpin2 ">
+						<div class="sp1">
+							<img src="images/nvzhuang/sp_5.png"/>
+						</div>
+						<div class="sp1_content">
+							<div class="jieshao1 jieshao2">
+								<p>抱枕</p>
+							</div>
+						</div>
+					</div>-->
+				</div>	
+			</div>
+		</main>
+		
+		
+
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#main",
+			data:{
+				result:[]
+			},
+			created(){
+				axios.get("/nz").then((res)=>{
+					console.log(res);
+					this.result = res.data;
+			
+				})
+				
+			},
+			methods:{
+				jump(){
+					location = "index.html"
+				}
+			}
+		})
+			
+	</script>
+	</body>
+</html>
